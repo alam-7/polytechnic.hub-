@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha Wave · MSBTE Diploma Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===== ANIMATED BACKGROUND ===== -->
+<div class="cyber-bg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="grid"></div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+    <a href="index.html" class="logo">
+        <span class="gradient">▲</span>
+        <span class="gradient">Alpha</span>
+        <span>Wave</span>
+        <span class="dot">●</span>
+    </a>
+    <button class="mobile-toggle" id="mobileToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="syllabus.html">Syllabus</a></li>
+        <li><a href="manuals.html">Manuals</a></li>
+        <li><a href="papers.html">Papers</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-badge">◆ MSBTE Official Resources ◆</span>
+        <h1>
+            <span class="gradient-text">Alpha Wave</span><br />
+            <span class="gold-text">Diploma Hub</span>
+        </h1>
+        <p>
+            Your complete study companion for MSBTE diploma.
+            Access syllabus, lab manuals, previous papers & more.
+            <span style="color: var(--cyan);">No login required.</span>
+        </p>
+        <div class="hero-tags">
+            <span class="hero-tag">📚 8 Branches</span>
+            <span class="hero-tag">📖 45+ Subjects</span>
+            <span class="hero-tag">🔬 18 Manuals</span>
+            <span class="hero-tag">📝 25 Papers</span>
+        </div>
+        <div class="btn-group">
+            <a href="syllabus.html" class="btn btn-primary">
+                <span class="icon">→</span> Explore Syllabus
+            </a>
+            <a href="manuals.html" class="btn btn-secondary">
+                <span class="icon">▸</span> View Manuals
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FEATURES SECTION ===== -->
+<section class="section">
+    <div class="section-header">
+        <span class="label">◆ Features ◆</span>
+        <h2>Everything You <span class="highlight">Need</span></h2>
+        <p>Curated resources for every branch and semester</p>
+    </div>
+    <div class="card-grid" id="featureGrid">
+        <!-- Cards loaded by JavaScript -->
+    </div>
+</section>
+
+<!-- ===== BRANCHES SECTION ===== -->
+<section class="section" style="padding-top: 0;">
+    <div class="section-header">
+        <span class="label">◆ Branches ◆</span>
+        <h2>Choose Your <span class="highlight">Branch</span></h2>
+        <p>Select your engineering branch to get started</p>
+    </div>
+    <div class="card-grid" id="branchGrid">
+        <!-- Branches loaded by JavaScript -->
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="brand">
+        <span class="gradient">▲</span>
+        <span class="gradient">Alpha</span>
+        <span>Wave</span>
+        <span style="color: var(--cyan);">●</span>
+    </div>
+    <p>Built for MSBTE students · No login · Free forever</p>
+    <div class="socials">
+        <a href="#">GitHub</a>
+        <a href="#">YouTube</a>
+        <a href="#">Instagram</a>
+    </div>
+    <p style="font-size: 0.7rem; margin-top: 1rem; color: var(--text-muted);">
+        © 2026 Alpha Wave · Made with <span style="color: var(--pink);">♥</span>
+    </p>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
