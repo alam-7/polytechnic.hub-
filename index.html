@@ -7,6 +7,100 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+        /* Additional styles for official badges and creator credit */
+        .official-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.3rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .official-badge-cyan {
+            color: var(--cyan);
+            border-color: rgba(0, 240, 255, 0.2);
+            background: rgba(0, 240, 255, 0.05);
+        }
+
+        .official-badge-cyan:hover {
+            background: rgba(0, 240, 255, 0.1);
+            border-color: var(--cyan);
+            box-shadow: var(--glow-cyan);
+            transform: translateY(-2px);
+        }
+
+        .official-badge-pink {
+            color: var(--pink);
+            border-color: rgba(255, 0, 229, 0.2);
+            background: rgba(255, 0, 229, 0.05);
+        }
+
+        .official-badge-pink:hover {
+            background: rgba(255, 0, 229, 0.1);
+            border-color: var(--pink);
+            box-shadow: var(--glow-pink);
+            transform: translateY(-2px);
+        }
+
+        .creator-credit {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-top: 1rem;
+        }
+
+        .creator-credit .name {
+            background: linear-gradient(135deg, var(--cyan), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        /* Official links section in navbar */
+        .nav-links a.official-link {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+        }
+
+        .nav-links a.official-link-cyan {
+            color: var(--cyan);
+            border: 1px solid rgba(0, 240, 255, 0.15);
+            background: rgba(0, 240, 255, 0.03);
+        }
+
+        .nav-links a.official-link-cyan:hover {
+            background: rgba(0, 240, 255, 0.08);
+            border-color: var(--cyan);
+        }
+
+        .nav-links a.official-link-pink {
+            color: var(--pink);
+            border: 1px solid rgba(255, 0, 229, 0.15);
+            background: rgba(255, 0, 229, 0.03);
+        }
+
+        .nav-links a.official-link-pink:hover {
+            background: rgba(255, 0, 229, 0.08);
+            border-color: var(--pink);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a.official-link {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+                border-radius: var(--radius-sm);
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -32,7 +126,11 @@
         <li><a href="syllabus.html">Syllabus</a></li>
         <li><a href="manuals.html">Manuals</a></li>
         <li><a href="papers.html">Papers</a></li>
+        <li><a href="equipment.html">Equipment</a></li>
         <li><a href="resources.html">Resources</a></li>
+        <!-- Official MSBTE Links in Navbar -->
+        <li><a href="https://econtent.msbte.edu.in/curriculum_search/" target="_blank" class="official-link official-link-cyan">📖 MSBTE Syllabus</a></li>
+        <li><a href="https://curriculum.msbte.edu.in/msbteacmon/curdev/outer.php?q=get_lab_manuals_k" target="_blank" class="official-link official-link-pink">🔬 MSBTE Manuals</a></li>
         <li><a href="about.html">About</a></li>
     </ul>
 </nav>
@@ -50,18 +148,34 @@
             Access syllabus, lab manuals, previous papers & more.
             <span style="color: var(--cyan);">No login required.</span>
         </p>
+
+        <!-- Official MSBTE Badges -->
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-bottom: 2rem;">
+            <a href="https://econtent.msbte.edu.in/curriculum_search/" target="_blank" class="official-badge official-badge-cyan">
+                📖 Official K-Scheme Syllabus
+            </a>
+            <a href="https://curriculum.msbte.edu.in/msbteacmon/curdev/outer.php?q=get_lab_manuals_k" target="_blank" class="official-badge official-badge-pink">
+                🔬 Official Lab Manuals
+            </a>
+        </div>
+
         <div class="hero-tags">
             <span class="hero-tag">📚 8 Branches</span>
             <span class="hero-tag">📖 45+ Subjects</span>
             <span class="hero-tag">🔬 18 Manuals</span>
             <span class="hero-tag">📝 25 Papers</span>
+            <span class="hero-tag">🔧 200+ Equipment</span>
         </div>
+
         <div class="btn-group">
             <a href="syllabus.html" class="btn btn-primary">
                 <span class="icon">→</span> Explore Syllabus
             </a>
             <a href="manuals.html" class="btn btn-secondary">
                 <span class="icon">▸</span> View Manuals
+            </a>
+            <a href="equipment.html" class="btn btn-pink">
+                <span class="icon">🔧</span> View Equipment
             </a>
         </div>
     </div>
@@ -76,6 +190,29 @@
     </div>
     <div class="card-grid" id="featureGrid">
         <!-- Cards loaded by JavaScript -->
+    </div>
+</section>
+
+<!-- ===== OFFICIAL MSBTE SECTION ===== -->
+<section class="section" style="padding-top: 0;">
+    <div class="section-header">
+        <span class="label">◆ Official MSBTE ◆</span>
+        <h2>Direct Access to <span class="highlight">MSBTE Portals</span></h2>
+        <p>Official K-Scheme curriculum and lab manuals from MSBTE</p>
+    </div>
+    <div class="card-grid" style="max-width: 800px; margin: 0 auto;">
+        <div class="card card-glow-cyan" onclick="window.open('https://econtent.msbte.edu.in/curriculum_search/', '_blank')">
+            <div class="icon">📖</div>
+            <h3>Official Syllabus Portal</h3>
+            <p>Search and view MSBTE K-Scheme curriculum for all branches and semesters</p>
+            <span class="arrow">Open Portal →</span>
+        </div>
+        <div class="card card-glow-pink" onclick="window.open('https://curriculum.msbte.edu.in/msbteacmon/curdev/outer.php?q=get_lab_manuals_k', '_blank')">
+            <div class="icon">🔬</div>
+            <h3>Official Lab Manuals</h3>
+            <p>Access K-Scheme lab manuals by semester — select and download</p>
+            <span class="arrow">Open Portal →</span>
+        </div>
     </div>
 </section>
 
@@ -100,12 +237,29 @@
         <span style="color: var(--cyan);">●</span>
     </div>
     <p>Built for MSBTE students · No login · Free forever</p>
+
+    <!-- Official MSBTE Footer Badges -->
+    <div style="margin: 1rem 0; display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://econtent.msbte.edu.in/curriculum_search/" target="_blank" style="color: var(--cyan); font-size: 0.7rem; text-decoration: none; border: 1px solid rgba(0,240,255,0.15); padding: 0.25rem 1rem; border-radius: 50px;">
+            📖 MSBTE Syllabus Portal
+        </a>
+        <a href="https://curriculum.msbte.edu.in/msbteacmon/curdev/outer.php?q=get_lab_manuals_k" target="_blank" style="color: var(--pink); font-size: 0.7rem; text-decoration: none; border: 1px solid rgba(255,0,229,0.15); padding: 0.25rem 1rem; border-radius: 50px;">
+            🔬 MSBTE Manuals Portal
+        </a>
+    </div>
+
+    <!-- Social Links -->
     <div class="socials">
         <a href="#">GitHub</a>
         <a href="#">YouTube</a>
         <a href="#">Instagram</a>
     </div>
-    <p style="font-size: 0.7rem; margin-top: 1rem; color: var(--text-muted);">
+
+    <!-- Creator Credit -->
+    <p class="creator-credit">
+        Created by <span class="name">Alamnawaz Anwarali Mulla</span>
+    </p>
+    <p style="font-size: 0.6rem; margin-top: 0.3rem; color: var(--text-muted);">
         © 2026 Alpha Wave · Made with <span style="color: var(--pink);">♥</span>
     </p>
 </footer>
