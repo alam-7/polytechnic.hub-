@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment - DIPLOMA HUB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .page-header {
+            padding: 120px 0 40px;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 3rem;
+        }
+        .page-header p {
+            color: var(--gray-400);
+            font-size: 1.1rem;
+        }
+        .search-filter {
+            max-width: 600px;
+            margin: 20px auto 40px;
+        }
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .equipment-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 25px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .equipment-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyan-400);
+            box-shadow: 0 8px 30px rgba(6, 182, 212, 0.1);
+        }
+        .equipment-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--white);
+        }
+        .equipment-card .badge {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: rgba(6, 182, 212, 0.15);
+            color: var(--cyan-400);
+            margin: 8px 0;
+        }
+        .equipment-card p {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+            margin: 8px 0;
+        }
+        .equipment-card .card-link {
+            color: var(--cyan-400);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .equipment-card .card-link:hover {
+            gap: 10px;
+        }
+        .no-results {
+            text-align: center;
+            color: var(--gray-400);
+            padding: 40px;
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>DIPLOMA<span class="highlight">HUB</span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="equipment.html" class="active">Equipment</a>
+                <a href="#">Practicals</a>
+                <a href="#">Quizzes</a>
+            </div>
+            <div class="nav-right">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary btn-sm" id="authBtn">Sign In</a>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Engineering <span class="gradient-text">Equipment</span></h1>
+            <p>Browse 200+ engineering equipment with detailed explanations</p>
+            
+            <!-- Search Filter -->
+            <div class="search-filter">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search equipment by name or category..." id="equipmentSearch" onkeyup="filterEquipment()">
+                    <button onclick="filterEquipment()"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPMENT GRID -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="equipment-grid" id="equipmentGrid"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>DIPLOMA HUB</h3>
+                    <p>"Understand Engineering. Learn Practically. Build the Future."</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="courses.html">Courses</a>
+                    <a href="equipment.html">Equipment</a>
+                    <a href="#">Practicals</a>
+                    <a href="#">Quizzes</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">MSBTE Official</a>
+                    <a href="#">Lab Manuals</a>
+                    <a href="#">Question Papers</a>
+                    <a href="#">Notes</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DIPLOMA HUB. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart" style="color: #f43f5e;"></i> for engineering students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
