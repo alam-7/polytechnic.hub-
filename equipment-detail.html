@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Detail - DIPLOMA HUB</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .eq-header {
+            padding: 120px 0 40px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .eq-header h1 {
+            font-size: 2.8rem;
+        }
+        .eq-header .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(6, 182, 212, 0.15);
+            color: var(--cyan-400);
+            margin: 5px 5px 5px 0;
+        }
+        .eq-content {
+            padding: 40px 0;
+        }
+        .eq-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        .eq-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .eq-card h3 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--cyan-400);
+        }
+        .eq-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .eq-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--glass-border);
+            color: var(--gray-300);
+        }
+        .eq-card ul li:last-child {
+            border-bottom: none;
+        }
+        .eq-card ul li::before {
+            content: "▸ ";
+            color: var(--cyan-400);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-400);
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .back-btn:hover {
+            color: var(--white);
+        }
+        @media (max-width: 768px) {
+            .eq-grid {
+                grid-template-columns: 1fr;
+            }
+            .eq-header h1 {
+                font-size: 2rem;
+            }
+        }
+        .verification-badge {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .verification-badge.pending {
+            background: rgba(234, 179, 8, 0.2);
+            color: #eab308;
+        }
+        .verification-badge.verified {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+        .bookmark-btn {
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--gray-400);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+        .bookmark-btn:hover {
+            border-color: var(--cyan-400);
+            color: var(--cyan-400);
+        }
+        .bookmark-btn.active {
+            border-color: var(--cyan-400);
+            color: var(--cyan-400);
+            background: rgba(6, 182, 212, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>DIPLOMA<span class="highlight">HUB</span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="equipment.html" class="active">Equipment</a>
+                <a href="practicals.html">Practicals</a>
+                <a href="quizzes.html">Quizzes</a>
+            </div>
+            <div class="nav-right">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary btn-sm" id="authBtn">Sign In</a>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EQUIPMENT DETAIL -->
+    <section class="eq-header">
+        <div class="container">
+            <a href="equipment.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Equipment</a>
+            <h1 id="eqName">Equipment Name</h1>
+            <div>
+                <span class="badge" id="eqCategory">Category</span>
+                <span class="verification-badge pending" id="eqStatus">Pending Verification</span>
+            </div>
+            <p style="color: var(--gray-400); margin-top: 10px;" id="eqPurpose">Purpose of the equipment</p>
+            <button class="bookmark-btn" onclick="toggleBookmark()"><i class="fas fa-bookmark"></i> Bookmark</button>
+        </div>
+    </section>
+
+    <!-- EQUIPMENT CONTENT -->
+    <section class="eq-content">
+        <div class="container">
+            <div class="eq-grid">
+                <div>
+                    <div class="eq-card">
+                        <h3><i class="fas fa-microchip"></i> Working Principle</h3>
+                        <p id="eqPrinciple">Working principle description</p>
+                    </div>
+                    <div class="eq-card">
+                        <h3><i class="fas fa-cogs"></i> How It Works</h3>
+                        <p id="eqHowWorks">How it works description</p>
+                    </div>
+                    <div class="eq-card">
+                        <h3><i class="fas fa-tools"></i> Main Parts</h3>
+                        <ul id="eqParts"></ul>
+                    </div>
+                    <div class="eq-card">
+                        <h3><i class="fas fa-info-circle"></i> How It Is Used</h3>
+                        <p id="eqHowUsed">How it is used description</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="eq-card">
+                        <h3><i class="fas fa-bullseye"></i> Applications</h3>
+                        <ul id="eqApplications"></ul>
+                    </div>
+                    <div class="eq-card">
+                        <h3><i class="fas fa-shield-alt"></i> Safety Precautions</h3>
+                        <ul id="eqSafety"></ul>
+                    </div>
+                    <div class="eq-card">
+                        <h3><i class="fas fa-graduation-cap"></i> Related Courses</h3>
+                        <ul id="eqCourses"></ul>
+                    </div>
+                    <div class="eq-card">
+                        <h3><i class="fas fa-link"></i> Related Practicals</h3>
+                        <ul id="eqPracticals">
+                            <li>No related practicals found</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>DIPLOMA HUB</h3>
+                    <p>"Understand Engineering. Learn Practically. Build the Future."</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="courses.html">Courses</a>
+                    <a href="equipment.html">Equipment</a>
+                    <a href="practicals.html">Practicals</a>
+                    <a href="quizzes.html">Quizzes</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="#">MSBTE Official</a>
+                    <a href="#">Lab Manuals</a>
+                    <a href="#">Question Papers</a>
+                    <a href="#">Notes</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DIPLOMA HUB. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart" style="color: #f43f5e;"></i> for engineering students</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Load equipment detail based on URL param
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('slug');
+        
+        const equipment = EQUIPMENT.find(e => e.slug === slug);
+        if (equipment) {
+            document.getElementById('eqName').textContent = equipment.name;
+            document.getElementById('eqCategory').textContent = equipment.category;
+            document.getElementById('eqPurpose').textContent = equipment.purpose;
+            document.getElementById('eqPrinciple').textContent = equipment.working_principle;
+            document.getElementById('eqHowWorks').textContent = equipment.how_it_works;
+            document.getElementById('eqHowUsed').textContent = equipment.how_used;
+            
+            // Status
+            const statusBadge = document.getElementById('eqStatus');
+            statusBadge.textContent = equipment.verification_status.charAt(0).toUpperCase() + equipment.verification_status.slice(1);
+            statusBadge.className = `verification-badge ${equipment.verification_status}`;
+            
+            // Parts
+            document.getElementById('eqParts').innerHTML = equipment.main_parts.map(p => `<li>${p}</li>`).join('');
+            
+            // Applications
+            document.getElementById('eqApplications').innerHTML = equipment.applications.map(a => `<li>${a}</li>`).join('');
+            
+            // Safety
+            document.getElementById('eqSafety').innerHTML = equipment.safety_precautions.map(s => `<li>${s}</li>`).join('');
+            
+            // Courses
+            const courseNames = equipment.course.map(c => {
+                const found = COURSES.find(course => course.id === c);
+                return found ? found.name : c;
+            });
+            document.getElementById('eqCourses').innerHTML = courseNames.map(c => `<li>${c}</li>`).join('');
+        }
+    </script>
+</body>
+</html>
