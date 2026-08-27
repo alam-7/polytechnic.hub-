@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electronics Engineering · Alpha Wave</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<div class="cyber-bg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="grid"></div>
+</div>
+
+<nav class="navbar" id="navbar">
+    <a href="../index.html" class="logo">
+        <span class="gradient">▲</span>
+        <span class="gradient">Alpha</span>
+        <span>Wave</span>
+        <span class="dot">●</span>
+    </a>
+    <button class="mobile-toggle" id="mobileToggle">☰</button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../syllabus.html">Syllabus</a></li>
+        <li><a href="../manuals.html">Manuals</a></li>
+        <li><a href="../papers.html">Papers</a></li>
+        <li><a href="../equipment.html">Equipment</a></li>
+        <li><a href="../resources.html">Resources</a></li>
+        <li><a href="../about.html">About</a></li>
+    </ul>
+</nav>
+
+<section class="hero" style="min-height: 60vh; padding-top: 7rem;">
+    <div class="hero-content">
+        <span class="hero-badge">📡 Branch</span>
+        <h1 style="font-size: 3.5rem;">
+            <span class="gradient-text">Electronics</span>
+            <span class="gold-text">Engineering</span>
+        </h1>
+        <p>All resources for Electronics Engineering — syllabus, manuals, papers & equipment.</p>
+        <div class="btn-group">
+            <a href="../syllabus.html" class="btn btn-primary">View Syllabus</a>
+            <a href="../manuals.html" class="btn btn-secondary">View Manuals</a>
+            <a href="../papers.html" class="btn btn-pink">View Papers</a>
+            <a href="../equipment.html" class="btn btn-secondary">View Equipment</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-header">
+        <span class="label">◆ Quick Access ◆</span>
+        <h2>Electronics <span class="highlight">Resources</span></h2>
+    </div>
+    <div class="card-grid" style="max-width: 800px;">
+        <div class="card card-glow-cyan" onclick="location.href='../syllabus.html'">
+            <div class="icon">📚</div>
+            <h3>Syllabus</h3>
+            <p>K-Scheme syllabus for all semesters</p>
+            <span class="arrow">View →</span>
+        </div>
+        <div class="card card-glow-pink" onclick="location.href='../manuals.html'">
+            <div class="icon">🔬</div>
+            <h3>Lab Manuals</h3>
+            <p>Practical guides for all subjects</p>
+            <span class="arrow">View →</span>
+        </div>
+        <div class="card card-glow-gold" onclick="location.href='../papers.html'">
+            <div class="icon">📝</div>
+            <h3>Question Papers</h3>
+            <p>Previous year papers with solutions</p>
+            <span class="arrow">View →</span>
+        </div>
+        <div class="card" onclick="location.href='../equipment.html'">
+            <div class="icon">🔧</div>
+            <h3>Equipment</h3>
+            <p>Lab equipment and tools</p>
+            <span class="arrow">View →</span>
+        </div>
+        <div class="card" onclick="location.href='../resources.html'">
+            <div class="icon">🎥</div>
+            <h3>Video Lectures</h3>
+            <p>Curated YouTube playlists</p>
+            <span class="arrow">View →</span>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="brand">
+        <span class="gradient">▲</span>
+        <span class="gradient">Alpha</span>
+        <span>Wave</span>
+        <span style="color: var(--cyan);">●</span>
+    </div>
+    <p>Built for MSBTE students · No login · Free forever</p>
+    <p style="font-size: 0.7rem; margin-top: 1rem; color: var(--text-muted);">
+        © 2026 Alpha Wave · Made with <span style="color: var(--pink);">♥</span>
+    </p>
+</footer>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>
